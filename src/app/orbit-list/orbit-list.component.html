@@ -6,7 +6,7 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr class="data-row" *ngFor ="let satelliteList of satellites">
+    <tr class="data-row" *ngFor ="let satelliteList of satellites; let i = index" [class.alternateRow] = IsIndexEvenOrOdd(i)>
         <td>{{satelliteList.name}}</td> <!--GPS 938-->
         <td [class.warning]="satelliteList.isSpaceDebris()">{{satelliteList.type}}</td>
         <td >{{satelliteList.operational}}</td>
@@ -15,6 +15,7 @@
     </tr>
 </table>
 
+<!--[class.alert]= "IsIndexEvenOrOdd()" -->
 <!-- TODO 2b: use *ngFor to display satellite data in the table -->
 <!-- TODO 3b: add style directive to conditionally highlight satellite type -->
 

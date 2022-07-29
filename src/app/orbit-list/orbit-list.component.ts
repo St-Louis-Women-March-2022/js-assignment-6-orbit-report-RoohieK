@@ -26,4 +26,12 @@ export class OrbitListComponent implements OnInit {
 		});
 	}
 
+	IsIndexEvenOrOdd(i : number): boolean {
+		if(i%2){
+			return false;
+		}else{
+			return true;
+			
+		}
+	}
 }
