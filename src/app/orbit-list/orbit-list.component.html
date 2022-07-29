@@ -8,8 +8,8 @@
     </tr>
     <tr class="data-row" *ngFor ="let satelliteList of satellites">
         <td>{{satelliteList.name}}</td> <!--GPS 938-->
-        <td>{{satelliteList.type}}</td>
-        <td>{{satelliteList.operational}}</td>
+        <td [class.warning]="satelliteList.isSpaceDebris()">{{satelliteList.type}}</td>
+        <td >{{satelliteList.operational}}</td>
         <td>{{satelliteList.orbitType}}</td>
         <td>{{satelliteList.launchDate}}</td>
     </tr>
